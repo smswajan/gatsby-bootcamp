@@ -1,15 +1,20 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import headerStyle from "./header.module.scss"
 
 const Header = () => {
     return (
-        <header style={{ display: "flex", justifyContent: "space-between" }}>
-            <h2>GatsbyBlog</h2>
+        <header className={headerStyle.header}>
+            <h1 >
+                <Link className={headerStyle.title} to='/'>Swajan</Link>
+            </h1>
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/blog">Blog</Link>
-                <Link to="/about">About</Link>
-                <Link to="/contact">Contact</Link>
+                <ul className={headerStyle.navList}>
+                    <li><Link className={headerStyle.navItem} activeClassName={headerStyle.activeNavItem} to="/">Home</Link></li>
+                    <li><Link className={headerStyle.navItem} activeClassName={headerStyle.activeNavItem} to="/blog">Blog</Link></li>
+                    <li><Link className={headerStyle.navItem} activeClassName={headerStyle.activeNavItem} to="/about">About</Link></li>
+                    <li><Link className={headerStyle.navItem} activeClassName={headerStyle.activeNavItem} to="/contact">Contact</Link></li>
+                </ul>
             </nav>
         </header>
     )
